@@ -1,4 +1,7 @@
-var abradolph = new TarjetaDeCredito(
+import { CreditCart } from "./creditCard.js";
+
+
+var abradolph = new CreditCart(
     "Abradolph Lincler",
     "4916119711304546"
   );
@@ -61,7 +64,7 @@ var abradolph = new TarjetaDeCredito(
   console.log("\n" + "Morty quiere pack y ovni pero no quedan :(" + "\n");
 
   // 10!!
-  
+
   console.log("\n" + "Pedidos de RickMenus: " + "\n");
   console.log("\n" + "Creditos de los invitad@s: " + "\n");
   */
