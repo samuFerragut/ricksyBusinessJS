@@ -1,5 +1,4 @@
-import { CreditCart } from "./creditCard.js";
-
+import { CreditCart } from "./creditCard";
 
 var abradolph = new CreditCart(
     "Abradolph Lincler",
@@ -9,7 +8,7 @@ var abradolph = new CreditCart(
   console.log("\n" + "Tarjeta de Abradolph" + "\n");
   console.log(abradolph);
   
-  /*
+  
   // UfosPark
 
   console.log("\n" + "Ovni de Abradolph" + "\n");
@@ -67,4 +66,3 @@ var abradolph = new CreditCart(
 
   console.log("\n" + "Pedidos de RickMenus: " + "\n");
   console.log("\n" + "Creditos de los invitad@s: " + "\n");
-  */
