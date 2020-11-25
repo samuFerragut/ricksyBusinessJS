@@ -1,0 +1,11 @@
+{
+  "name": "tarjetadecredito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tarjetaDeCredito.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Samu Ferragut",
+  "license": "ISC"
+}
