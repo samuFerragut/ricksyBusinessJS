@@ -5,7 +5,7 @@ function CreditCard(owner, number) {
     this.symbol = "EZI";
 }
 
-CreditCard.pay = function (pago) {
+CreditCard.prototype.pay = function (pago) {
     if (this.credit >= pago) {
         this.credit -= pago;
         return true;
