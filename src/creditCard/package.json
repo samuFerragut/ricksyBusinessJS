@@ -1,0 +1,14 @@
+{
+  "name": "creditcard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "creditCard.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Samu Ferragut",
+  "license": "ISC"
+}
