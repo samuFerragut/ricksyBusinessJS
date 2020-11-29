@@ -10,13 +10,20 @@ beforeEach(() => {
   });
 
 
-test("Añadir 3 ufos al UfosPark", () => {
-    let ufos = ["Ufo1", "Ufo2", "Ufo3"];
+test("Añadir ufos", () => {
+    let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
     let actualFlota = new Map();
     for (let position in ufos) {
       actualFlota.set(ufos[position], null);
       ufosPark.add(ufos[position]);
     }
-    console.log(actualFlota)
     expect(ufosPark.flota).toMatchObject(actualFlota);
+});
+
+test("Get ufo", () => {
+    let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
+    for (let position in ufos) {
+      ufosPark.add(ufos[position]);
+    }
+    expect(ufosPark.getUfoOf()).toBe("Uber");
 });
