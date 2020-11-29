@@ -13,8 +13,18 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
           return ufo;
         }
       }
-      return "No hay ovnis libres";
+      return "No hay ovnis disponibles";
   }
+
+UfosPark.prototype.dispatch = function(card) {
+    for(let [ufo, owner] of this.flota.entries()) {
+        if(owner == null && card.credit >= this.fee) {
+            card.pay(this.fee);
+            this.flota.set(ufo, card.number);
+            break;
+        }
+    }
+}
 
 const singletonUfosPark = (function () {
     var instance;
