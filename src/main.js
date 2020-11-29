@@ -1,39 +1,44 @@
 //imports 
 var CreditCard =  require("./creditCard/creditCard");
+var singleUfosPark = require("./ufosPark/ufosPark");
 
-var abradolph = new CreditCard(
-    "Abradolph Lincler",
-    "4916119711304546"
-  );
+var abradolph = new CreditCard("Abradolph", "12345678");
   
   console.log("\n" + "Tarjeta de Abradolph" + "\n");
   console.log(abradolph);
   
-  
+
   // UfosPark
 
+  var ufosPark = singleUfosPark.getPark();
   console.log("\n" + "Ovni de Abradolph" + "\n");
-  console.log(ufosPark.getUfoOf(abradolph.number()));
-  console.log("Credito de Abradolph: " + abradolph.credit());
+  console.log(ufosPark.getUfoOf());
+  console.log("Credito de Abradolph: " + abradolph.credit);
 
   console.log("\n" + "Abradolph quiere otro ovni" + "\n");
-  console.log("Su credito no ha cambiado: " + abradolph.credit());
-  console.log("Ovni de Abradolph: " + ufosPark.getUfoOf(abradolph.number()));
+  console.log("Su credito no ha cambiado: " + abradolph.credit);
+  console.log("Ovni de Abradolph: " + ufosPark.getUfoOf(abradolph.number));
 
   // UfosPark GearHead
-   
-  console.log("Su credito es cero: " + gearHead.credit());
-  console.log("No puede reservar ovni: " + ufosPark.getUfoOf(gearHead.number()));
+
+  var gearHead = new CreditCard("GearHead", "12345678");
+ 
+  console.log("Su credito es cero: " + gearHead.credit);
+  console.log("No puede reservar ovni: " + ufosPark.getUfoOf(gearHead.number));
 
   // UfosPark Squanchy
 
-  console.log("Su credito es: " + squanchy.credit());
-  console.log("Su ovni es: " + ufosPark.getUfoOf(squanchy.number()));
+  var squanchy = new CreditCard("Squanchy", "12345678");
+
+  console.log("Su credito es: " + squanchy.credit);
+  console.log("Su ovni es: " + ufosPark.getUfoOf(squanchy.number));
 
   // UfosPark Morty
 
-  console.log("Su credito no ha cambiado: " + morty.credit());
-  console.log("No hay ovni Morty: " + ufosPark.getUfoOf(morty.number()));
+  var morty = new CreditCard("Morty", "12345678");
+
+  console.log("Su credito no ha cambiado: " + morty.credit);
+  console.log("No hay ovni Morty: " + ufosPark.getUfoOf(morty.number));
 
   // Flota de ovnis
 
@@ -48,13 +53,13 @@ var abradolph = new CreditCard(
 
   console.log("\n" + "Abradolph compra su pack" + "\n");
   console.log("Packs: " + packExpender);
-  console.log("Credito de Abradolph: " + abradolph.credit());
+  console.log("Credito de Abradolph: " + abradolph.credit);
 
   // Expender GearHead
 
   console.log("\n" + "GearHead sin credito para su pack" + "\n");
   console.log("Packs: " + packExpender);
-  console.log("Credito de GearHead: " + gearHead.credit());
+  console.log("Credito de GearHead: " + gearHead.credit);
 
   // Receptivo
 
