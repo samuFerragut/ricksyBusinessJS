@@ -10,6 +10,10 @@ beforeEach(() => {
     ufosPark = UfosPark.getPark();
   });
 
+  test("singleton", () => {
+    let single = UfosPark.getPark();
+    expect(single === ufosPark).toBeFalsy
+  })
 
 test("Añadir ufos", () => {
     let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
