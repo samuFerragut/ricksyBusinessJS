@@ -44,4 +44,5 @@ test("Dispatch", () => {
     ufosPark.dispatch(morty);
     ufosPark.dispatch(squanchy)
     expect(ufosPark.flota).toMatchInlineSnapshot(actualFlota, `Object {}`);
+    expect(abradolph.credit).toBe(2500)
   });
