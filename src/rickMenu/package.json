@@ -1,8 +1,8 @@
 {
-  "name": "receptivo",
+  "name": "rickmenu",
   "version": "1.0.0",
   "description": "",
-  "main": "receptivo.js",
+  "main": "rickMenu.js",
   "directories": {
     "test": "test"
   },
