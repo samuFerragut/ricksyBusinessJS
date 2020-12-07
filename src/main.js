@@ -1,7 +1,10 @@
 //imports 
 var CreditCard =  require("./creditCard/creditCard");
 var singleUfosPark = require("./ufosPark/ufosPark");
-var CrystalExpender = require("./crystalExpender/crystalExpender")
+var CrystalExpender = require("./crystalExpender/crystalExpender");
+var RickMenu = require("./rickMenu/rickMenu");
+var singletonReceptivo = require("./receptivo/receptivo")
+var menuJson = require("./data/menus.json")
 
 var abradolph = new CreditCard("Abradolph", "12345678");
   
@@ -93,15 +96,18 @@ var abradolph = new CreditCard("Abradolph", "12345678");
   console.log("Credito de GearHead: " + gearHead.credit);
 
   // Receptivo
-
+  var receptivo = singletonReceptivo.getReceptivo();
   console.log("<------------------------------>")
   console.log("Llega Squanchy");
   console.log("Llega GearHead");
   console.log("Llega Birdpearson!");
   console.log("\n" + "Morty quiere pack y ovni pero no quedan :(" + "\n");
 
-  // 10!!
-
+  // Rick menu!!
   console.log("<------------------------------>")
-  console.log("\n" + "Pedidos de RickMenus: " + "\n");
-  console.log("\n" + "Creditos de los invitad@s: " + "\n");
+  var menu = new RickMenu(menuJson.China.menu1.stck, menuJson.China.menu1.price);
+  // Registrar el menu
+  receptivo.register(menu);
+  console.log("\n" + "Pedidos de RickMenus:");
+  console.log(menu);
+
