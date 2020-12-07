@@ -5,6 +5,7 @@ var CrystalExpender = require("./crystalExpender/crystalExpender");
 var RickMenu = require("./rickMenu/rickMenu");
 var singletonReceptivo = require("./receptivo/receptivo")
 var menuJson = require("./data/menus.json")
+var expenderMock = require("./data/expenderMock.json")
 
 var abradolph = new CreditCard("Abradolph", "12345678");
   
@@ -75,7 +76,7 @@ var abradolph = new CreditCard("Abradolph", "12345678");
   // CrystalExpender
 
   console.log("<------------------------------>")
-  var crystalExpender = new CrystalExpender(5, 50);
+  var crystalExpender = new CrystalExpender(expenderMock.crystal.stock, expenderMock.crystal.price);
   console.log("\n" + "Packs" + "\n");
   console.log(crystalExpender);
 
