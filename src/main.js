@@ -3,9 +3,10 @@ var CreditCard =  require("./creditCard/creditCard");
 var singleUfosPark = require("./ufosPark/ufosPark");
 var CrystalExpender = require("./crystalExpender/crystalExpender");
 var RickMenu = require("./rickMenu/rickMenu");
-var singletonReceptivo = require("./receptivo/receptivo")
-var menuJson = require("./data/menus.json")
-var expenderMock = require("./data/expenderMock.json")
+var singletonReceptivo = require("./receptivo/receptivo");
+var menuJson = require("./data/menus.json");
+var expenderMock = require("./data/expenderMock.json");
+var pack = require("./data/packs.json")
 
 var abradolph = new CreditCard("Abradolph", "12345678");
   
@@ -97,11 +98,33 @@ var abradolph = new CreditCard("Abradolph", "12345678");
   console.log("Credito de GearHead: " + gearHead.credit);
 
   // Receptivo
-  var receptivo = singletonReceptivo.getReceptivo();
   console.log("<------------------------------>")
+  console.log("Se pone en marcha el receptivo");
+
+  var birdperson = new CreditCard("BirdPerson", "12345675");
+
+  var receptivo = singletonReceptivo.getReceptivo();
+  receptivo.register(crystalExpender);
+  receptivo.register(ufosPark);
+
   console.log("Llega Squanchy");
+  receptivo.dispatch(squanchy);
+  console.log(squanchy.number);
+  console.log("Packs: " + pack[0].stock);
+  console.log("Ovni: " + ufosPark.getUfoOf(squanchy));
+
   console.log("Llega GearHead");
-  console.log("Llega Birdpearson!");
+  receptivo.dispatch(gearHead);
+  console.log(gearHead.number);
+  console.log("Packs: " + pack[0].stock);
+  console.log("Ovni: " + ufosPark.getUfoOf(gearHead));
+
+  console.log("Llega Birdperson!");
+  receptivo.dispatch(birdperson);
+  console.log(birdperson.number);
+  console.log("Packs: " + pack[0].stock);
+  console.log("Ovni: " + ufosPark.getUfoOf(birdperson));
+  
   console.log("\n" + "Morty quiere pack y ovni pero no quedan :(" + "\n");
 
   // Rick menu!!
