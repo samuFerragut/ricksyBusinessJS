@@ -18,13 +18,25 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
 
 UfosPark.prototype.dispatch = function(card) {
     for(let [ufo, owner] of this.flota.entries()) {
-        if(owner == null && card.credit >= this.fee) {
+        if (
+            this.validate(owner, card.number) &&
+            card.credit >= this.fee
+          ) {
             card.pay(this.fee);
             this.flota.set(ufo, card.number);
             break;
         }
     }
 }
+
+UfosPark.prototype.validate = function (value, owner) {
+    let position = Array.from(this.flota.values()).includes(
+      owner,
+      0
+    );
+    return !position && value == null;
+  };
+
 
 const singletonUfosPark = (function () {
     var instance;

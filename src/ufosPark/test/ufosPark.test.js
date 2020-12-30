@@ -31,7 +31,7 @@ test("Get ufo", () => {
       ufosPark.add(ufos[position]);
     }
     expect(ufosPark.getUfoOf()).toBe("Uber");
-});
+}); 
 
 test("Dispatch", () => {
     let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
@@ -50,3 +50,14 @@ test("Dispatch", () => {
     expect(ufosPark.flota).toMatchInlineSnapshot(actualFlota, `Object {}`);
     expect(abradolph.credit).toBe(2500)
   });
+
+test("Mismo owner distinto ufo", () => {
+  let ufos = ["Uber", "Mytaxi"]
+  for (let position in ufos) {
+    ufosPark.add(ufos[position]);
+  }
+  ufosPark.dispatch(abradolph);
+  expect(abradolph.credit).toBe(2500)
+  ufosPark.dispatch(abradolph);
+  expect(abradolph.credit).toBe(2500)
+});
