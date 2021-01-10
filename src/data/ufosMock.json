@@ -1,6 +1,6 @@
 {
     "park": {
         "price": 500,
-        "stock": ["Uber", "Cabify"]
+        "stock": ["Uber", "Mytaxi", "Cabify", "Yaxi"]
     }
 }

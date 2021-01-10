@@ -13,7 +13,7 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
           return ufo;
         }
       }
-      return "No hay ovnis disponibles para ti";
+      return "No hay ovnis disponibles o ya tienes tu ovni reservado";
   }
 
 UfosPark.prototype.dispatch = function(card) {
