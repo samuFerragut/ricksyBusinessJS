@@ -8,6 +8,7 @@ beforeEach(() => {
     morty = new CreditCard("Morty", 78634599);
     squanchy = new CreditCard("Squanchy", 12345678);
     ufosPark = UfosPark.getPark();
+    ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
   });
 
   test("singleton", () => {
@@ -16,7 +17,6 @@ beforeEach(() => {
   })
 
 test("Añadir ufos", () => {
-    let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
     let actualFlota = new Map();
     for (let position in ufos) {
       actualFlota.set(ufos[position], null);
@@ -26,7 +26,6 @@ test("Añadir ufos", () => {
 });
 
 test("Get ufo", () => {
-    let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
     for (let position in ufos) {
       ufosPark.add(ufos[position]);
     }
@@ -34,7 +33,6 @@ test("Get ufo", () => {
 }); 
 
 test("Dispatch", () => {
-    let ufos = ["Uber", "Mytaxi", "Cabify", "Yaxi"];
     let actualFlota = new Map()
       .set("Uber", abradolph.number)
       .set("Mytaxi", rick.number)
@@ -52,7 +50,6 @@ test("Dispatch", () => {
   });
 
 test("Mismo owner distinto ufo", () => {
-  let ufos = ["Uber", "Mytaxi"]
   for (let position in ufos) {
     ufosPark.add(ufos[position]);
   }
