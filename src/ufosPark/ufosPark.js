@@ -7,9 +7,10 @@ UfosPark.prototype.add = function (ufo) {
     this.flota.set(ufo, null);
 }
 
-UfosPark.prototype.getUfoOf = function(cardNumber) {
-    for (let [ufo, owner] of this.flota.entries()) {
-      if (cardNumber == owner) {
+UfosPark.prototype.getUfoOf = function(owner) {
+    cardNumber = owner.number
+    for (let [ufo, number] of this.flota.entries()) {
+      if (cardNumber == number) {
           return ufo;
         }
       }

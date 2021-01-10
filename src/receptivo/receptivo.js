@@ -13,14 +13,19 @@ for (let observer of this.observers) {
 }
 };
 
-const singletonReceptivo = (function singleton() {
-const receptivo = new Receptivo();
-
-return {
-    getReceptivo: function () {
-    return receptivo;
-    },
-};
+const singletonReceptivo = (function() {
+    var instance;
+    function createInstanece() {
+        return new Receptivo()
+    }
+    return {
+        getReceptivo: function () {
+            if(!instance) {
+                instance = createInstanece();
+            }
+        return instance;
+        },
+    };
 })();
 
 module.exports = singletonReceptivo;
