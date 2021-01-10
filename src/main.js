@@ -154,3 +154,4 @@ var abradolph = new CreditCard("Abradolph", "12345678");
     console.log("\n")
   }
 
+  console.log(menu)
